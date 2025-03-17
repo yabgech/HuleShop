@@ -1,0 +1,19 @@
+<%- include('../layouts/header') %>
+
+<div class="card mx-auto mt-4" style="width: 40rem;">
+  
+    <div class="card-body py-5 mt-5">
+        <h3 class="card-title"><%= product.name %></h3>
+        <p class="card-text"><%= product.description %></p>
+        <h4 class="text-success">$<%= product.price %></h4>
+        <p><strong>Category:</strong> <%= product. catagory %></p>
+
+        <a href="/product/<%= product._id %>/edit" class="btn btn-warning">Edit</a>
+        <form action="/products/<%= product._id %>?_method=DELETE" method="POST" class="d-inline">
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+        <a href="/product" class="btn btn-secondary">Back to Products</a>
+    </div>
+</div>
+
+<%- include('../layouts/footer') %>
